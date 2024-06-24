@@ -1,0 +1,18 @@
+:where(.css-dev-only-do-not-override-3rel02).ant-menu
+  .ant-menu-item
+  .ant-menu-item-icon
+  + span,
+:where(.css-dev-only-do-not-override-3rel02).ant-menu
+  .ant-menu-submenu-title
+  .ant-menu-item-icon
+  + span,
+:where(.css-dev-only-do-not-override-3rel02).ant-menu
+  .ant-menu-item
+  .anticon
+  + span,
+:where(.css-dev-only-do-not-override-3rel02).ant-menu
+  .ant-menu-submenu-title
+  .anticon
+  + span {
+  margin-inline-start: 8px;
+}
