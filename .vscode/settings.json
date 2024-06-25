@@ -32,6 +32,8 @@
   "cSpell.words": [
     "analy",
     "antd",
+    "Appstore",
+    "Cascader",
     "chunkhash",
     "compat",
     "flexf",
@@ -42,8 +44,9 @@
     "pmmmwh",
     "purgecss",
     "reduxjs",
+    "timi",
     "tseslint",
     "uuidv",
     "webpackbar"
-  ],
+  ]
 }

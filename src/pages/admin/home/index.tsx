@@ -1,18 +1,11 @@
-import { Button } from 'antd'
+import BlendSearch from '@/components/BlendSearch';
 
 const Welcome: React.FC = () => {
   return (
     <div>
-      {/* Welcome */}
-      <Button
-        onClick={() => {
-          console.log('aaa')
-        }}
-      >
-        add8
-      </Button>
+      <BlendSearch />
     </div>
-  )
-}
+  );
+};
 
-export default Welcome
+export default Welcome;
