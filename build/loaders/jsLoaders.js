@@ -1,15 +1,23 @@
-const path = require('path')
+const os = require('os');
+const swcConfig = require('../../.swcrc');
+const { ENV, MODE } = require('../constants');
+
+const workerNum = os.availableParallelism();
 
 module.exports = {
-  include: [path.resolve(__dirname, '../../src')],
-  test: /.(ts|tsx)$/,
+  test: /\.(js|jsx|ts|tsx)$/,
+  exclude: /node_modules/,
   use: [
     {
-      loader: 'thread-loader',
-      options: {
-        workers: 3 // 开启几个 worker 进程来处理打包，默认是 os.cpus().length - 1
-      }
+      loader: 'thread-loader'
+      // options: {
+      //   workers: workerNum - 1 // 开启几个 worker 进程来处理打包，默认是 os.cpus().length - 1
+      // }
     },
-    'babel-loader'
+    // 'babel-loader'
+    {
+      loader: 'swc-loader',
+      options: swcConfig(ENV === MODE.DEV)
+    }
   ]
-}
+};

@@ -1,17 +1,18 @@
-const TerserPlugin = require('terser-webpack-plugin')
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = {
   minimizer: [
     new CssMinimizerPlugin(), // 压缩css
     new TerserPlugin({
-      // 压缩js
       parallel: true, // 开启多线程压缩
       terserOptions: {
         compress: {
           pure_funcs: ['console.log'] // 删除console.log
-        }
-      }
+        },
+        mangle: true
+      },
+      minify: TerserPlugin.swcMinify
     })
   ],
   splitChunks: {
@@ -35,4 +36,4 @@ module.exports = {
       }
     }
   }
-}
+};
